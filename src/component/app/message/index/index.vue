@@ -3,21 +3,22 @@
 <template>
 	<div class="grob-task-list">
 		消息列表首页
-
+		<Button type="primary" plain size="small">默认按钮</Button>
 		<footer-tab/>
 	</div>
 </template>
 
 
 <script>
-
+import { Button } from 'vant';
 import provinceData from '@/lib/provinceCode.js'
 import footerTab from '@/component/common/footerTab/index.vue'
 
 export default {
 	name:'MessageIndex',
 	components:{ 
-        footerTab
+        footerTab,
+        Button
     },
 	data(){
 		return{
