@@ -1,0 +1,112 @@
+
+
+@import '../../../style/variable.scss';
+
+.modal-validateCode{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: #fff;
+    // margin: 0px px2rem(80);
+    width: px2rem(590);
+    // margin-top: 40%;
+    margin-left: px2rem(-295);
+    margin-top: px2rem(-220);
+
+    border-radius: px2rem(8);
+    position: relative;
+    text-align: center;
+    padding: px2rem(40) px2rem(40);
+    box-sizing:border-box; 
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box; 
+    overflow: hidden;
+    .title{
+        font-size: px2rem(32);
+        font-weight: 600;
+        position: relative;
+        span{
+            float: right;
+            padding: px2rem(10) px2rem(10) 0 ;
+            position: absolute;
+            right: px2rem(-18);
+        }
+    }
+    .error{
+        color:#ff5050;
+        font-size: px2rem(16);
+    }
+    .validate-img{
+        margin: px2rem(50) 0;
+        overflow: hidden;
+        background-color: #c0c0c0;
+        vertical-align: middle;
+        text-align: center;
+        img{
+            height: px2rem(112);
+            vertical-align: middle;
+        }
+        span{
+            float: right;
+            vertical-align: middle;
+            display: inline-block;
+            background-color: #fff;
+            width: px2rem(112);
+            height: px2rem(112);
+            line-height: px2rem(112);
+            border:px2rem(1) solid rgba(238,238,238,1);
+            i{
+                vertical-align: middle;
+            }
+        }
+    }
+
+
+    .validate-container {
+        .validate-box {
+            position: absolute;
+            z-index: -1;
+            left: px2rem(20);
+            top: px2rem(20);
+            opacity: 0;
+        }
+        ul {
+            overflow: auto;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+            li {
+                height: px2rem(104);
+                width: px2rem(104);
+                line-height: px2rem(104);
+                text-align: center;
+                border: 1px solid #D9D9D9;
+                border-radius: px2rem(6);
+                font-size: px2rem(62);
+                font-weight: bold;
+                color: #333;
+                &.light {
+                    border: px2rem(1) solid #D9D9D9;
+                }
+                &.active {
+                    border: 1px solid #F85C00 !important;
+                    &::after {
+                        content: '';
+                        display: inline-block; 
+                        height: px2rem(52);
+                        width: 2px;
+                        background: #F85C00;
+                        margin-top: px2rem(24);
+                        margin-left: px2rem(4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+

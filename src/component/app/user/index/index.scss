@@ -1,0 +1,100 @@
+
+@import '../../../../style/variable.scss';
+
+.user-index-page{
+	padding-bottom:px2rem(100);
+	
+	.banner{
+		padding: px2rem(80) 0 px2rem(28) px2rem(40);
+		position: relative;
+		// background-color: pink;
+		background: linear-gradient(90deg,rgba(251,150,0,1) 0%,rgba(248,93,0,1) 100%);
+		img{
+			width: px2rem(120);
+			height: px2rem(120);
+			border-radius: 50%;
+			vertical-align: middle;
+		}
+		span{
+			line-height: px2rem(120);
+			font-weight: 700;
+			font-size: px2rem(36);
+			padding-left: px2rem(30);
+			color:#fff;
+		}
+		i{
+			position: absolute;
+			top: px2rem(22);
+			right: px2rem(48);
+		}
+	}
+	.item-list{
+		background: #fff;
+		margin-top: px2rem(20);
+		.link-item{
+			display: block;
+			margin: 0 px2rem(34);
+			border-bottom: px2rem(1) solid #EEEEEE;
+			line-height: px2rem(112);
+			position: relative;
+			&:last-child{
+				border: none;
+			}
+			&.no-border{
+				border: none;
+			}
+			i{
+				vertical-align: middle;
+				&.row{
+					position: absolute;
+					top: px2rem(48);;
+					right: 0;
+				}
+			}
+			span{
+				vertical-align: middle;
+				font-size: px2rem(32);
+				margin-left: px2rem(32);
+			}
+		}
+		a:active{
+			background-color: transparent !important;
+		}
+	}
+	.connect-praent{
+		margin-top: px2rem(64);
+		text-align: center;
+		.label{
+			color: #6D6D6D;
+			font-size: px2rem(30);
+			margin-bottom: px2rem(30);
+		}
+		p{
+			color: #999;
+			font-size: px2rem(26);
+			margin-bottom: px2rem(30);
+			span{
+				color: #1D7BEF;
+				user-select: text;
+			}
+		}
+	}
+	.logout-btn{
+		// background: #fff;
+		padding: px2rem(10) px2rem(60) px2rem(64);
+		button{
+			border: none;
+			display: block;
+			width: 100%;
+			height: px2rem(98);
+			line-height: px2rem(98);
+			color: #333333;
+			background-color: #F2F3F6;
+			font-size: px2rem(34);
+			border-radius: px2rem(6);
+			&:active{
+				background-color: #f0f0f0;
+			}
+		}
+	}
+}

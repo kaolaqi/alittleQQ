@@ -1,0 +1,30 @@
+stages:
+    - deploy
+    
+test-deploy:
+    stage: deploy
+    tags:
+        - qnz-dubbo-test
+    script:
+        - npm i
+        - rm -rf node_modules/spritesheet-templates/*
+        - cp -rf spritesheet-templates/* node_modules/spritesheet-templates/
+        - npm run build-test
+        - rm -rf ~/web/h5/*
+        - cp -rf dist/*  ~/web/h5/
+        
+    when: manual
+    
+prod-deploy:
+    stage: deploy
+    tags:
+        - qnz-api
+    script:
+        - npm i
+        - rm -rf node_modules/spritesheet-templates/*
+        - cp -rf spritesheet-templates/* node_modules/spritesheet-templates/
+        - npm run build-prod
+        - rm -rf ~/web/h5/*
+        - cp -rf dist/*  ~/web/h5/
+        
+    when: manual

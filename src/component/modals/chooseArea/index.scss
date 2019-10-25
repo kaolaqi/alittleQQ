@@ -1,0 +1,76 @@
+
+
+@import '../../../style/variable.scss';
+
+
+.modal-noticeModel{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: px2rem(-295);
+    margin-top: px2rem(-348);
+    width: px2rem(590);
+    background-color: #fff;
+    border-radius: px2rem(8);
+    background: url('../../../images/notice.png') no-repeat;
+    background-color: #fff;
+    background-size: 100%;
+    .title{
+        margin: px2rem(102) px2rem(103) px2rem(102) px2rem(320);
+        font-weight: 700;
+        font-size: px2rem(36);
+        color: #F85C00;
+    }
+    .content{
+        padding: 0 px2rem(44);
+        .time{
+            font-size: px2rem(24);
+            color: #999;
+            margin-bottom: px2rem(26);
+        }
+        .text{
+            margin: px2rem(26) 0 px2rem(50);
+            font-size: px2rem(28);
+            color: #393836;
+        }
+        .btn{
+            text-align: center;
+            button{
+                border: none;
+                outline: none;
+                line-height: px2rem(72);
+                width: px2rem(360);
+                color: #fff;
+                font-size: px2rem(30);
+                border-radius:  px2rem(6);
+                background-color: #F85C00;
+                background:linear-gradient(90deg,rgba(251,150,0,1) 0%,rgba(248,93,0,1) 100%);
+            }
+        }
+        .tip{
+            margin: px2rem(30) 0 px2rem(50);
+            text-align: center;
+            color: #CCCCCC;
+            font-size: px2rem(24);
+            span{
+                display: inline-block;
+                width: px2rem(24);
+                height: px2rem(24);
+                border: px2rem(1) solid #ccc;
+                border-radius: px2rem(4);
+                background: #fff;
+                box-sizing: border-box;
+                vertical-align: middle;
+                margin-right: px2rem(10);
+                position: relative;
+                top: px2rem(-2);
+                i{
+                    position: relative;
+                    top: px2rem(-4);
+                }
+            }
+        }
+    }
+
+}

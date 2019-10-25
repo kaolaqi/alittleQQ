@@ -1,0 +1,69 @@
+
+
+@import '../../../style/variable.scss';
+
+
+.modal-setUserName{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: px2rem(-295);
+    margin-top: px2rem(-175);
+    width: px2rem(590);
+    background-color: #fff;
+    border-radius: px2rem(8);
+    .head{
+        font-weight: 700;
+        font-size: px2rem(32);
+        color: #393836;
+        text-align: center;
+        margin: px2rem(50) 0 px2rem(30);
+    }
+    p{
+        margin: 0 px2rem(30);
+        border:px2rem(1) solid #EEEEEE;
+        line-height: px2rem(84);
+        height: px2rem(84);
+        padding: px2rem(4) px2rem(33);
+        position: relative;
+        input{
+            display: block;
+            border: none;
+            outline: none;
+            height: px2rem(80);
+        }
+        i{
+            position: absolute;
+            top: px2rem(30);
+            right: px2rem(33);
+        }
+    }
+    .btn{
+        border-top: px2rem(1) solid #EFEFF3;
+        overflow: hidden;
+        line-height: px2rem(96);
+        text-align: center;
+        margin-top: px2rem(50);
+        div{
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            float: left;
+            border: 0px;
+            margin: 0px;
+            border-right: 1px solid #EFEFF3;
+            color:#9194A2;
+            font-size: px2rem(34);
+            &:after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            &:last-child{
+                border-right: none;
+                color:#F85C00;
+            }
+        }    
+    }
+}

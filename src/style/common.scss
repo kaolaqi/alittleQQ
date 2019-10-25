@@ -1,0 +1,110 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    user-select:none;
+}
+input,button{
+    outline:medium;
+}
+ul{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    color:#343643;
+    &:active{
+        background-color: transparent;
+    }
+}
+
+
+
+  
+
+html,body,#app {
+    height:100%;
+    color: #343643;
+    font-size: 13px;
+    font-family: PingFang SC,Helvetica Neue,Helvetica,Arial,Sans-serif;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    // box-sizing: border-box;
+    // padding-top: calc(constant(safe-area-inset-top));
+    // padding-top: calc(env(safe-area-inset-top));
+}
+@media only screen and (min-width:414px) {
+    html {
+        font-size: 55px !important;
+    }
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y:auto ;
+    &.hidden{
+        overflow: hidden !important;
+    }
+}
+
+
+.mint-datetime-picker{
+    .picker-toolbar{
+        border-bottom: 1px solid #EFEFF3 !important;
+    }
+    .mint-datetime-cancel{
+        width:  auto;
+        color: #9194a2;
+        text-align: left;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+    .mint-datetime-confirm{
+        width:  auto;
+        color: #F85C00;
+        text-align: right;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+}
+
+.mint-popup-bottom{
+    p{
+        border-bottom: 1px solid #EFEFF3 !important;
+    }
+    .cannel{
+        width:  auto !important;
+        color: #9194a2 !important;
+        text-align: left !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
+    }
+    .confirm{
+        width:  auto !important;
+        color: #F85C00 !important;
+        text-align: right !important;
+        padding: 0 16px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+
+
+
+

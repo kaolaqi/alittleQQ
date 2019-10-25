@@ -1,0 +1,43 @@
+
+@import '../../../style/variable.scss';
+
+.footer-tab-container{
+    position: fixed;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    box-sizing: border-box;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    min-height: px2rem(98);
+    border-top:px2rem(1) solid #e7e7e7;
+    overflow: hidden;
+    background-color:#fff;
+    a{
+        width:33.33%;
+        height: 100%;
+        float:left;
+        text-align: center;
+        color:#999;
+        position: relative;
+        &.active{
+            color:#F85C00;
+        }
+        i{
+          display: inline-block;
+          margin-top: 4px;
+          vertical-align: middle;
+        }
+        span{
+            display: block;
+            font-size: px2rem(22);
+            font-weight: 700;
+        }
+    }
+}
+ 
+
+ 
+
+
+ 

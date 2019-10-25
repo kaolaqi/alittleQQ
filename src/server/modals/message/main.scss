@@ -1,0 +1,43 @@
+
+
+@import '../../../style/variable.scss';
+
+.modals-message-content{
+    position: fixed;
+    top: 50%;
+    // left: 50%;    
+    // transform: translate(-50%,-50%);
+    left: 0;
+
+    width: 100%;
+    margin-top: px2rem(-48);
+    z-index: 1602;
+    text-align: center;
+    .content{
+        padding: 0 px2rem(34);
+        background-color: rgba(0,0,0,0);
+        line-height: px2rem(96);
+        color:#fff;
+        font-size: px2rem(32);
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.5s;
+        -moz-transition: background-color 0.5s; /* Firefox 4 */
+        -webkit-transition: background-color 0.5s; /* Safari 和 Chrome */
+        -o-transition: background-color 0.5s; /* Opera */
+        span{
+            opacity: 0 
+        }
+        &.active{
+            background-color: rgba(0,0,0,0.7);
+            span{
+                opacity: 1
+            }
+        }
+    }
+}
+
+
+
+
+
