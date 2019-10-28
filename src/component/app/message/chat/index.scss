@@ -2,7 +2,12 @@
 
 @import '../../../../style/variable.scss';
 
-.contacts-list{
+.pages{
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+}
+.message-list{
   li{
     display: flex;
     border-bottom: 1px solid #f0f0f0;

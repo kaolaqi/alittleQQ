@@ -1,24 +1,23 @@
 <template>
-	<div class="layout" style="height: 100%;">
-        <router-view v-if="!$route.meta.keepAlive"></router-view>
-	</div>
+  <div class="layout" style="height: 100%;">
+    <router-view v-if="!$route.meta.keepAlive" />
+  </div>
 </template>
 <script>
 
 export default {
-	name:'indexLayout',
-	data(){
-		return{
+  name: 'IndexLayout',
+  data() {
+    return {
 
-		}
-	},
-	methods:{
-		
-	}
+    }
+  },
+  methods: {
+
+  }
 }
 </script>
 
 <style lang="scss">
 </style>
-
 

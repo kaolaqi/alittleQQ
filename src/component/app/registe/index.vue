@@ -45,7 +45,7 @@
 </template>
 <script>
 
-import { commonModel } from '@/http/index';
+import { userModel } from '@/http/index';
 
 // import ModalSendValidateCode from '@/component/common/sendValidateCode/index.vue';
 // import popContainer from '@/component/common/popContainer/index.vue';
@@ -104,7 +104,7 @@ export default {
 		submit(){
 			var self = this;
     		modalLoadingServer.loading();
-			commonModel.userResigter({
+			userModel.userResigter({
 				mobile: self.mobile,
 				nickname: self.nickname,
 				password: self.password,
@@ -143,7 +143,7 @@ export default {
 		// 	var self = this;
 		// 	self.randToken = randToken;
 		// 	self.isSendValidateCode = false;
-		// 	commonModel.sendValidateCode({
+		// 	userModel.sendValidateCode({
 		// 		mobileNo: self.mobile,
 		// 		randToken: randToken,
 		// 		smsType: 10

@@ -4,8 +4,8 @@
 	<div class="user-index-page">
 		
 		<div class="banner">
-			<img src="../../../../images/avatar.png" alt="">
-			<span>{{userInfo.nickName}}</span>
+			<img :src="avatar" alt="">
+			<span>{{nickname}}</span>
 			<i class="cicon icon-edit" @click="showEditUsername"></i>
 		</div>
 
@@ -35,23 +35,18 @@
 		<div class="logout-btn">
 			<button @click="logout">退出登录</button>
 		</div>
-
-		<setUserName :isVisible="isVisible" :oldUserName="userInfo.nickName" @closeEdit="closeEdit"></setUserName>
-
+		<setUserName :isVisible="isVisible" :oldUserName="nickname" @closeEdit="closeEdit"></setUserName>
 		<footer-tab :activeIndex="3" />
-
 	</div>
 </template>
 
 
 <script>
 
-import { commonModel } from '@/http/index';
+import { mapGetters } from 'vuex'
+import { userModel } from '@/http/index';
 import footerTab from '@/component/common/footerTab/index.vue'
 import setUserName from '@/component/modals/setUserName/index.vue'
-
-import tokenServer  from '@/server/token/index'
-import { dateFormat } from '@/filters/common.js'
 import { modalAlertServer ,modalLoadingServer, modalMessageServer, modalConfirmServer } from '@/server/modals/index';
 
 
@@ -61,18 +56,15 @@ export default {
         footerTab,
         setUserName,
     },
+	computed: {
+		...mapGetters(['avatar', 'nickname'])
+	},
 	data(){
 		return{
-			userInfo: {
-				nickName: 'kaolaqi'
-			},
 			isVisible: false,
 			qnzUserPlatform: ''
 		}
 	},
-	filters:{
-		dateFormat : dateFormat 
-    },
 	mounted:function(){
 
 	},
@@ -83,16 +75,14 @@ export default {
 	            title:'提示',
 	            content:'确定要退出登录吗？',
 	            confirmClick:function(){
-	            	commonModel.outUser().then(data => {
-	            		if(data.statusCode === 200){
-	            			modalMessageServer.show('已退出登录',1000)
-	                		self.$router.push({name:'login'});
-	            		}else{
-	            			modalAlertServer.use({
-		   			         	content: '退出接口请求失败！',
-					     	})
-	            		}
-	            	})
+	            	self.$store.dispatch('user/Logout').then((data) => {
+		        		console.log('登路成功')
+		        		self.$router.push({name:'login'})
+		        	}).catch((err) => {
+		        		modalAlertServer.use({
+						    content: err.returnMsg
+						})
+		        	})
 	            }
 	        })
 		},
