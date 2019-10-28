@@ -1,9 +1,8 @@
-
 import httpRequestServer from '../server/http/index'
 
 export default {
   // 用户注册
-  userResigter: function(data) {
+  userResigter(data) {
     return httpRequestServer({
       method: 'POST',
       url: '/api/client/register',
@@ -50,7 +49,15 @@ export default {
       url: '/api/client/sendFriendMessage',
       data: data
     })
+  },
+
+  // 获取好友消息列表
+  queryFriendMessage(data) {
+    return httpRequestServer({
+      method: 'POST',
+      url: '/api/client/queryFriendMessage',
+      data: data
+    })
   }
 
 }
-

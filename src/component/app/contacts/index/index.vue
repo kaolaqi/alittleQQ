@@ -3,7 +3,7 @@
   <div class="task-index">
     <nav-head title="联系人" :avatar="avatar" icon="plus" />
     <ul class="contacts-list">
-      <li v-for="item in friendList" :key="item.friendUserId">
+      <li v-for="item in friendList" :key="item.friendUserId" @click="goUserDetail(item.userInfo.mobile)">
         <div class="avatar">
           <img :src="item.userInfo.avatar" alt="">
         </div>
@@ -35,7 +35,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['avatar', 'userId'])
+    ...mapGetters(['avatar', 'userId', 'mobile'])
   },
   created() {
     this.getFriendList()
@@ -49,6 +49,10 @@ export default {
           this.friendList = data.result
         }
       })
+    },
+    goUserDetail(mobile){
+      console.log(444, mobile, 999)
+      this.$router.push({name: 'UserDetail', params: {mobile: mobile}})
     }
   }
 }

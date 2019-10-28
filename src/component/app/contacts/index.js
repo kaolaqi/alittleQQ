@@ -3,6 +3,7 @@
 const layout = () => import('@/component/app/contacts/layout.vue')
 
 const contactsIndex = () => import('@/component/app/contacts/index/index.vue')
+const userDetail = () => import('@/component/app/contacts/userDetail/index.vue')
 
 export default [
   {
@@ -19,6 +20,14 @@ export default [
         component: contactsIndex,
         meta: {
           title: '联系人'
+        }
+      },
+      {
+        path: 'userDetail/:mobile',
+        name: 'UserDetail',
+        component: userDetail,
+        meta: {
+          title: '用户详情'
         }
       }
     ]

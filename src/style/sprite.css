@@ -28,13 +28,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-appeal_details {
   background-image: url(../images/sprite.png);
-  background-position: -5.37rem -1.52rem;
+  background-position: -5.37rem -1.91rem;
   width: 0.14rem;
   height: 0.24rem;
 }
 .icon-bounty {
   background-image: url(../images/sprite.png);
-  background-position: 0rem -3.81rem;
+  background-position: -4.74rem -1.26rem;
   width: 0.48rem;
   height: 0.48rem;
 }
@@ -64,7 +64,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-docking_details {
   background-image: url(../images/sprite.png);
-  background-position: -5.37rem -1.91rem;
+  background-position: -5.37rem -1.52rem;
   width: 0.14rem;
   height: 0.24rem;
 }
@@ -76,13 +76,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-edit {
   background-image: url(../images/sprite.png);
-  background-position: -1.26rem -3.81rem;
+  background-position: -3.15rem -3.81rem;
   width: 0.48rem;
   height: 0.48rem;
 }
 .icon-exclusive {
   background-image: url(../images/sprite.png);
-  background-position: -1.89rem -3.81rem;
+  background-position: -4.74rem -0.63rem;
   width: 0.48rem;
   height: 0.48rem;
 }
@@ -118,13 +118,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-icon_mianduimian {
   background-image: url(../images/sprite.png);
-  background-position: -2.7rem 0rem;
+  background-position: -2.7rem -1.11rem;
   width: 0.96rem;
   height: 0.96rem;
 }
 .icon-icon_pengyouquan {
   background-image: url(../images/sprite.png);
-  background-position: -2.7rem -1.11rem;
+  background-position: -2.7rem 0rem;
   width: 0.96rem;
   height: 0.96rem;
 }
@@ -154,7 +154,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-invite {
   background-image: url(../images/sprite.png);
-  background-position: -2.52rem -3.81rem;
+  background-position: -4.74rem 0rem;
   width: 0.48rem;
   height: 0.48rem;
 }
@@ -172,7 +172,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-loading {
   background-image: url(../images/sprite.png);
-  background-position: -2.38rem -4.44rem;
+  background-position: -2.93rem -4.44rem;
   width: 0.4rem;
   height: 0.4rem;
 }
@@ -184,7 +184,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-log-icon-refresh {
   background-image: url(../images/sprite.png);
-  background-position: -3.81rem -1.34rem;
+  background-position: -3.81rem -2.05rem;
   width: 0.56rem;
   height: 0.56rem;
 }
@@ -202,7 +202,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-personal_right {
   background-image: url(../images/sprite.png);
-  background-position: -5.37rem -3.23rem;
+  background-position: -5.37rem -3.85rem;
   width: 0.1rem;
   height: 0.16rem;
 }
@@ -214,19 +214,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-reminder {
   background-image: url(../images/sprite.png);
-  background-position: -5.37rem 0rem;
+  background-position: -5.37rem -0.78rem;
   width: 0.24rem;
   height: 0.24rem;
 }
 .icon-return_white {
   background-image: url(../images/sprite.png);
-  background-position: -3.15rem -3.81rem;
+  background-position: -4.74rem -3.78rem;
   width: 0.48rem;
   height: 0.48rem;
 }
 .icon-return {
   background-image: url(../images/sprite.png);
-  background-position: -3.78rem -3.81rem;
+  background-position: -4.74rem -3.15rem;
   width: 0.48rem;
   height: 0.48rem;
 }
@@ -244,19 +244,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-set {
   background-image: url(../images/sprite.png);
-  background-position: -4.74rem 0rem;
+  background-position: -4.74rem -2.52rem;
   width: 0.48rem;
   height: 0.48rem;
 }
 .icon-share_pop_close {
   background-image: url(../images/sprite.png);
-  background-position: -3.81rem -2.05rem;
+  background-position: -3.81rem -1.34rem;
   width: 0.56rem;
   height: 0.56rem;
 }
 .icon-state_date {
   background-image: url(../images/sprite.png);
-  background-position: -5.37rem -0.39rem;
+  background-position: -5.37rem 0rem;
   width: 0.24rem;
   height: 0.24rem;
 }
@@ -268,49 +268,49 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-state_search {
   background-image: url(../images/sprite.png);
-  background-position: -5.37rem -0.78rem;
+  background-position: -5.37rem -0.39rem;
   width: 0.24rem;
   height: 0.24rem;
 }
 .icon-state {
   background-image: url(../images/sprite.png);
-  background-position: -2.93rem -4.44rem;
+  background-position: -2.38rem -4.44rem;
   width: 0.4rem;
   height: 0.4rem;
 }
 .icon-tab_icon_grab_pre {
   background-image: url(../images/sprite.png);
-  background-position: -4.74rem -0.63rem;
+  background-position: -3.78rem -3.81rem;
   width: 0.48rem;
   height: 0.48rem;
 }
 .icon-tab_icon_grab {
   background-image: url(../images/sprite.png);
-  background-position: -4.74rem -1.26rem;
+  background-position: -2.52rem -3.81rem;
   width: 0.48rem;
   height: 0.48rem;
 }
 .icon-tab_icon_personal_pre {
   background-image: url(../images/sprite.png);
-  background-position: -4.74rem -1.89rem;
+  background-position: 0rem -3.81rem;
   width: 0.48rem;
   height: 0.48rem;
 }
 .icon-tab_icon_personal {
   background-image: url(../images/sprite.png);
-  background-position: -4.74rem -2.52rem;
+  background-position: -1.89rem -3.81rem;
   width: 0.48rem;
   height: 0.48rem;
 }
 .icon-tab_icon_task_pre {
   background-image: url(../images/sprite.png);
-  background-position: -4.74rem -3.15rem;
+  background-position: -1.26rem -3.81rem;
   width: 0.48rem;
   height: 0.48rem;
 }
 .icon-tab_icon_task {
   background-image: url(../images/sprite.png);
-  background-position: -4.74rem -3.78rem;
+  background-position: 0rem -4.44rem;
   width: 0.48rem;
   height: 0.48rem;
 }
@@ -328,19 +328,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-task_right_active {
   background-image: url(../images/sprite.png);
-  background-position: -5.37rem -3.54rem;
+  background-position: -5.37rem -3.23rem;
   width: 0.1rem;
   height: 0.16rem;
 }
 .icon-task_right {
   background-image: url(../images/sprite.png);
-  background-position: -5.37rem -3.85rem;
+  background-position: -5.37rem -3.54rem;
   width: 0.1rem;
   height: 0.16rem;
 }
 .icon-task {
   background-image: url(../images/sprite.png);
-  background-position: 0rem -4.44rem;
+  background-position: -4.74rem -1.89rem;
   width: 0.48rem;
   height: 0.48rem;
 }

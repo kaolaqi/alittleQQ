@@ -3,6 +3,9 @@
 @import '../../../../style/variable.scss';
 
 .contacts-list{
+  box-sizing: border-box;
+  padding-top: px2rem(88);
+  padding-bottom: px2rem(104);
   li{
     display: flex;
     border-bottom: 1px solid #f0f0f0;

@@ -1,0 +1,26 @@
+
+
+@import '../../../../style/variable.scss';
+
+.user-detail{
+  box-sizing: border-box;
+  padding-top: px2rem(88);
+  display: flex;
+  .avatar{
+    padding: 0 10px;
+    img{
+      width: px2rem(80);
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      vertical-align: middle;
+    }
+  }
+  .info{
+    padding-top: px2rem(8);
+    .sign{
+      padding-top: px2rem(4);
+      color: #ccc;
+      font-size: px2rem(24);
+    }
+  }
+}
