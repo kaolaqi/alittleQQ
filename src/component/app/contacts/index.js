@@ -4,6 +4,7 @@ const layout = () => import('@/component/app/contacts/layout.vue')
 
 const contactsIndex = () => import('@/component/app/contacts/index/index.vue')
 const userDetail = () => import('@/component/app/contacts/userDetail/index.vue')
+const searchUser = () => import('@/component/app/contacts/searchUser/index.vue')
 
 export default [
   {
@@ -28,6 +29,14 @@ export default [
         component: userDetail,
         meta: {
           title: '用户详情'
+        }
+      },
+      {
+        path: 'searchUser',
+        name: 'SearchUser',
+        component: searchUser,
+        meta: {
+          title: '添加查询'
         }
       }
     ]

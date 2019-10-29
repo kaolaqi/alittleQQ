@@ -1,6 +1,6 @@
 
 <template>
-  <div class="task-index">
+  <div>
     <nav-head title="用户详情" :is-back="true" />
     <div class="user-detail">
       <div class="avatar">
@@ -11,30 +11,33 @@
         <p class="sign">{{ userInfo.mobile }}</p>
       </div>
     </div>
-    <footer-tab />
+    <div class="footer-btn">
+      <button v-if="isFriend" @click="toSendMessage">发消息</button>
+      <button v-else @click="addFriend">加好友</button>
+    </div>
   </div>
 </template>
 
 <script>
-// import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 import { userModel } from '@/http'
-import footerTab from '@/component/common/footerTab/index.vue'
 import navHead from '@/component/common/navHead/index.vue'
+import { modalAlertServer } from '@/server/modals/index'
 
 export default {
   name: 'UserDetail',
   components: {
-    footerTab,
     navHead
   },
   data() {
     return {
-       userInfo: []
+      userInfo: [],
+      isFriend: false
     }
   },
-  // computed: {
-  //   ...mapGetters(['avatar', 'userId'])
-  // },
+  computed: {
+    ...mapGetters(['avatar', 'userId'])
+  },
   created() {
     this.getUserInfo()
   },
@@ -43,12 +46,44 @@ export default {
       userModel.getUserInfo({
         mobile: this.$route.params.mobile
       }).then(data => {
-        console.log(data)
         if (data.statusCode === 200) {
           this.userInfo = data.data
-          console.log(this.userInfo)
+          this.ckeckIsfriend()
         }
       })
+    },
+    ckeckIsfriend() {
+      userModel.chickIsFriend({
+        userId: this.userId,
+        friendUserId: this.userInfo.userId
+      }).then(data => {
+        console.log(999, data)
+        if (data.statusCode === 200) {
+          this.isFriend = data.result > 0
+          console.log(999, this.isFriend)
+        }
+      })
+    },
+    addFriend() {
+      var self = this
+      userModel.addUserFriend({
+        userId: this.userId,
+        friendUserId: this.userInfo.userId
+      }).then(data => {
+        if (data.statusCode === 200) {
+          modalAlertServer.use({
+            title: '提示',
+            confirmText: '发消息',
+            content: '添加好友成功',
+            onClickConfirm() {
+              self.$router.push({ name: 'MessageChat', params: { mobile: self.userInfo.mobile }})
+            }
+          })
+        }
+      })
+    },
+    toSendMessage() {
+      this.$router.push({ name: 'MessageChat', params: { mobile: this.userInfo.mobile }})
     }
   }
 }

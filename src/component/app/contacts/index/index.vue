@@ -1,7 +1,7 @@
 
 <template>
   <div class="task-index">
-    <nav-head title="联系人" :avatar="avatar" icon="plus" />
+    <nav-head title="联系人" :avatar="avatar" icon="plus" :on-click-custom="search" />
     <ul class="contacts-list">
       <li v-for="item in friendList" :key="item.friendUserId" @click="goUserDetail(item.userInfo.mobile)">
         <div class="avatar">
@@ -50,9 +50,11 @@ export default {
         }
       })
     },
-    goUserDetail(mobile){
-      console.log(444, mobile, 999)
-      this.$router.push({name: 'UserDetail', params: {mobile: mobile}})
+    goUserDetail(mobile) {
+      this.$router.push({ name: 'UserDetail', params: { mobile: mobile }})
+    },
+    search() {
+      this.$router.push({ name: 'SearchUser' })
     }
   }
 }

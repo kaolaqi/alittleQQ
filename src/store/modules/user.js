@@ -68,7 +68,6 @@ const actions = {
       userModel.getUserInfo({
         mobile: payload.mobile.trim()
       }).then(function(data) {
-        console.log(2222, data)
         if (data.statusCode === 200) {
           commit('SET_MOBILE', data.data.mobile)
           commit('SET_NICKNAME', data.data.nickname)

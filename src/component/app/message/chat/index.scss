@@ -21,13 +21,15 @@
     overflow: hidden;
     img{
       width: px2rem(80);
+      height: px2rem(80);
       float: right;
+      border-radius: 50%;
     }
     p{
       float: right;
       margin-top: 5px;
       margin-right: 10px;
-      border: 1px solid #cccc;
+      border: 1px solid rgba(5, 147, 241, 1);
       background-color: #fff;
       padding: 4px 8px;
       border-radius: 4px;
