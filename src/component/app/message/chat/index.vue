@@ -2,18 +2,20 @@
 <template>
   <div class="pages">
     <nav-head :is-back="true" :ong-history-back="backMessageList" :title="friendInfo.nickname" icon="other-pay" />
-    <ul class="chat-message-list">
-      <template v-for="(item, index) in messageRecords">
-        <li v-if="item.userId === userId" :key="index">
-          <img :src="avatar" alt="">
-          <p>{{ item.contentText }}</p>
-        </li>
-        <li v-else :key="index" class="left">
-          <img :src="friendInfo.avatar" alt="">
-          <p>{{ item.contentText }}</p>
-        </li>
-      </template>
-    </ul>
+    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+      <ul class="chat-message-list">
+        <template v-for="(item, index) in messageRecords">
+          <li v-if="item.userId === userId" :key="index">
+            <img :src="avatar" alt="">
+            <p>{{ item.contentText }}</p>
+          </li>
+          <li v-else :key="index" class="left">
+            <img :src="friendInfo.avatar" alt="">
+            <p>{{ item.contentText }}</p>
+          </li>
+        </template>
+      </ul>
+    </van-pull-refresh>
     <footer-chat-input @sendMessage="sendMessage" />
   </div>
 </template>
@@ -36,7 +38,9 @@ export default {
       friendInfo: {},
       messageRecords: [],
       wsInstance: null,
-      setChatStatusFlag: true
+      setChatStatusFlag: true,
+      isLoading: false,
+      page: 1,
     }
   },
   computed: {
@@ -51,7 +55,6 @@ export default {
   methods: {
     initWebSocket() {
       var self = this
-      console.log(1212, self.userId)
       this.wsInstance = new WebSocket(socketUrl + '/id' + self.userId)
       this.wsInstance.onopen = () => {
         console.log(`userId为 ${self.userId} 的用户链接到websocket服务`)
@@ -77,12 +80,20 @@ export default {
     queryFriendMessage() {
       userModel.queryFriendMessage({
         userId: this.userId,
-        friendUserId: this.friendInfo.userId
+        friendUserId: this.friendInfo.userId,
+        page: this.page
       }).then(data => {
         if (data.statusCode === 200) {
-          this.messageRecords = data.result.rows
+          this.messageRecords = data.result.rows.concat(this.messageRecords)
+          if(this.messageRecords.length < data.result.count){
+            this.isLoading = false
+          }
         }
       })
+    },
+    onRefresh(){
+      this.page++;
+      this.queryFriendMessage()
     },
     sendMessage(text) {
       userModel.sendFriendMessage({
@@ -92,6 +103,8 @@ export default {
       }).then(data => {
         if (data.statusCode === 200) {
           this.messageRecords.push(data.result)
+          // 列表滚动到最底部
+
           console.log('发送消息成功', data)
           this.changeChatStatus()
           //消息发送成功之后更改聊天状态
@@ -105,6 +118,7 @@ export default {
           friendUserId: this.friendInfo.userId,
           status: 1
         }).then(data => {
+          this.setChatStatusFlag = false
           if (data.statusCode === 200) {
             console.log('发送消息成功', data)
           }
