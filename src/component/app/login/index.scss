@@ -17,7 +17,7 @@
       position: absolute;
       bottom: 0;
       right: px2rem(60);
-      color: #F85C00;
+      color: #1989fa;
       font-size: px2rem(30);
       font-weight: 400;
     }
@@ -69,7 +69,7 @@
               &.active{
                   pointer-events:auto;
                   // background-color: #ff5050;
-                  color:#F85C00;
+                  color:#1989fa;
               }
           }
       }
@@ -107,8 +107,8 @@
       pointer-events:none;
       &.active{
           color:#fff;
-      background-color: #F85C00;
-      background:linear-gradient(90deg,rgba(251,150,0,1) 0%,rgba(248,93,0,1) 100%);
+      background-color: #1989fa;
+      background:linear-gradient(90deg, #78bafd 0%, #007fff 100%);
           pointer-events:auto;
       }
   }

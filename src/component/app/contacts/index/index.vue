@@ -9,7 +9,7 @@
         </div>
         <div class="info">
           {{ item.userInfo.nickname }}
-          <p class="sign">[4G在线]他的签名</p>
+          <p class="sign">[4G在线]{{ item.userInfo.sign }}</p>
         </div>
       </li>
     </ul>

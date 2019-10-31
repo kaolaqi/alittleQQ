@@ -9,8 +9,9 @@
         </div>
         <div class="info">
           {{ item.userInfo.nickname }}
-          <p class="sign">在吗？</p>
+          <p class="sign">{{ item.userInfo.lastMessage ? item.userInfo.lastMessage.contentText : '' }}</p>
         </div>
+        <span class="time">{{ item.userInfo.lastMessage ? item.userInfo.lastMessage.createdAt : '' }}</span>
       </li>
     </ul>
     <footer-tab />

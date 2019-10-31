@@ -21,7 +21,7 @@
         color:#999;
         position: relative;
         &.active{
-            color:#F85C00;
+            color:#1989fa;
         }
         i{
           display: inline-block;
@@ -31,7 +31,6 @@
         span{
             display: block;
             font-size: px2rem(22);
-            font-weight: 700;
         }
     }
 }
