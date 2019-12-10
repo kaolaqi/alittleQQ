@@ -22,7 +22,7 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   buildTest: {
-    env: {NODE_ENV: '"test"'},
+    env: { NODE_ENV: '"test"' },
     // index: path.resolve(__dirname, '../distTest/index.html'),
     // assetsRoot: path.resolve(__dirname, '../distTest'),
     index: path.resolve(__dirname, '../dist/index.html'),
@@ -49,10 +49,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        '/api': {
-            target: `http://127.0.0.1:8090`,
-            changeOrigin: true
-        }
+      '/api': {
+        target: `http://127.0.0.1:8090`,
+        changeOrigin: true
+      }
     },
     cssSourceMap: false
   }
