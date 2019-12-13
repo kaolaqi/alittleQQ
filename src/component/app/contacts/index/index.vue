@@ -41,15 +41,11 @@ export default {
   computed: {
     ...mapGetters(["avatar", "userId", "mobile"])
   },
-  created() {
-    console.log(this.usavatarerId, this.userId, this.mobile);
-    setTimeout(() => {
-      this.getFriendList();
-    });
+  mounted() {
+    this.getFriendList();
   },
   methods: {
     getFriendList() {
-      console.log(this.userId);
       userModel
         .getUserFriendList({
           userId: this.userId

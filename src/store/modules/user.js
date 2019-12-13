@@ -75,13 +75,10 @@ const actions = {
   GetUserInfo({
     commit
   }, payload) {
-    console.log(9764, payload)
     return new Promise((resolve, reject) => {
-      console.log(4444)
       userModel.getUserInfo({
         mobile: payload.mobile.trim()
       }).then((data) => {
-        console.log(222, data)
         if (data.statusCode === 200) {
           commit('SET_MOBILE', data.data.mobile)
           commit('SET_NICKNAME', data.data.nickname)
@@ -96,7 +93,6 @@ const actions = {
         } else if (data.statusCode === 413) {
           modalMessageServer.show('验证码错误，请重试', 1000)
         } else {
-          console.log(333, data)
           modalAlertServer.use({
             content: data.message
           })
