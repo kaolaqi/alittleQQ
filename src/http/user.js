@@ -37,7 +37,7 @@ export default {
   getUserFriendList(data) {
     return httpRequestServer({
       method: 'GET',
-      url: '/api/client/getUserFriendList',
+      url: '/api/client/getFriendList',
       params: data
     })
   },
@@ -95,5 +95,4 @@ export default {
       data: data
     })
   }
-
 }

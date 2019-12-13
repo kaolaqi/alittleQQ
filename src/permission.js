@@ -4,20 +4,25 @@ import tokenServer from '@/server/token/index.js' // get token from cookie
 
 const whiteList = ['/login', '/registe'] // no redirect whitelist
 
-router.beforeEach(async(to, from, next) => {
+router.beforeEach((to, from, next) => {
   // determine whether the user has logged in
   const hasToken = tokenServer.getToken()
+  console.log(9932329, hasToken)
 
   if (hasToken) {
     if (to.path === '/login') {
-      next({ path: '/' })
+      next({
+        path: '/'
+      })
     } else {
       // 刷新的时候 store 被重置，要重新请求用户信息数据  需要权限可以在这里添加权限控制
       const hasInfo = store.getters.nickname
       if (hasInfo) {
         next()
       } else {
-        store.dispatch('user/GetUserInfo', { mobile: hasToken })
+        store.dispatch('user/GetUserInfo', {
+          mobile: hasToken
+        })
         next()
       }
     }
