@@ -1,4 +1,3 @@
-
 <template>
   <div class="task-index">
     <nav-head title="联系人" :avatar="avatar" icon="plus" :on-click-custom="search" />

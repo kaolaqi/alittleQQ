@@ -1,4 +1,3 @@
-
 <template>
   <div class="user-index-page">
     <div class="banner">
@@ -8,27 +7,33 @@
     </div>
 
     <div class="item-list">
-      <router-link :to="{name: 'wallet'}" class="link-item">
+      <router-link :to="{ name: 'wallet' }" class="link-item">
         <i class="cicon icon-wallet" />
         <span>钱包余额</span>
         <i class="cicon icon-personal_right row" />
       </router-link>
-      <router-link :to="{name: 'commissionSetList',params:{searchPhone: 'null'}}" class="link-item">
+      <router-link
+        :to="{ name: 'commissionSetList', params: { searchPhone: 'null' } }"
+        class="link-item"
+      >
         <i class="cicon icon-commission" />
         <span>抽成设置</span>
         <i class="cicon icon-personal_right row" />
       </router-link>
-      <router-link :to="{name: 'rewardStatistic',params:{searchPhone: 'null'}}" class="link-item">
+      <router-link
+        :to="{ name: 'rewardStatistic', params: { searchPhone: 'null' } }"
+        class="link-item"
+      >
         <i class="cicon icon-bounty" />
         <span>赏金数据统计</span>
         <i class="cicon icon-personal_right row" />
       </router-link>
-      <router-link :to="{name: 'taskResultAppeal'}" class="link-item">
+      <router-link :to="{ name: 'taskResultAppeal' }" class="link-item">
         <i class="cicon icon-task" />
         <span>任务结果申诉</span>
         <i class="cicon icon-personal_right row" />
       </router-link>
-      <router-link :to="{name: 'dockeCodeIndex'}" class="link-item">
+      <router-link :to="{ name: 'dockeCodeIndex' }" class="link-item">
         <i class="cicon icon-exclusive" />
         <span>我的专属对接</span>
         <i class="cicon icon-personal_right row" />
@@ -105,4 +110,3 @@ export default {
 <style lang="scss" scoped>
 @import "./index.scss";
 </style>
-

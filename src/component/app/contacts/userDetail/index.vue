@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <nav-head title="用户详情" :is-back="true" />
@@ -43,7 +42,6 @@ export default {
   },
   methods: {
     getUserInfo() {
-      console.log(898989);
       userModel
         .getUserInfo({
           mobile: this.$route.params.mobile

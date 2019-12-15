@@ -46,7 +46,7 @@ export default {
   searchUserList(data) {
     return httpRequestServer({
       method: 'GET',
-      url: '/api/client/searchUserList',
+      url: '/api/client/userList',
       params: data
     })
   },
