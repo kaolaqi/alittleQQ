@@ -45,7 +45,7 @@ export default {
       this.timer = setTimeout(() => {
         userModel
           .searchUserList({
-            searchText: this.searchText,
+            text: this.searchText,
             selfMobile: this.mobile
           })
           .then(data => {

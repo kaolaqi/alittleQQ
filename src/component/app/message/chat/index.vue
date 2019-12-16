@@ -8,7 +8,7 @@
       icon="other-pay"
     />
     <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-      <ul class="chat-message-list">
+      <ul class="chat-message-list" ref="messageList">
         <template v-for="(item, index) in messageRecords">
           <li v-if="item.userId === userId" :key="index">
             <img :src="avatar" alt />
@@ -67,13 +67,13 @@ export default {
       this.wsInstance.onmessage = data => {
         console.log("服务端推送回来的消息", data.data);
         this.messageRecords.push(JSON.parse(data.data));
+        console.log(this.$refs.messageList);
       };
       this.wsInstance.onclose = msg => {
         console.log(`userId为 ${self.userId} 的用户断开websocket链接`);
       };
     },
     getFriendInfo() {
-      console.log(3333);
       userModel
         .getUserInfo({
           mobile: this.$route.params.mobile
@@ -85,7 +85,7 @@ export default {
           }
         });
     },
-    queryFriendMessage() {
+    queryFriendMessage(add) {
       userModel
         .queryFriendMessage({
           userId: this.userId,
@@ -94,7 +94,14 @@ export default {
         })
         .then(data => {
           if (data.statusCode === 200) {
-            this.messageRecords = data.result.rows.concat(this.messageRecords);
+            if (add) {
+              this.messageRecords.unshift(...data.result.rows.reverse());
+            } else {
+              this.messageRecords = this.messageRecords.concat(
+                data.result.rows.reverse()
+              );
+            }
+
             if (this.messageRecords.length < data.result.count) {
               this.isLoading = false;
             }
@@ -103,7 +110,7 @@ export default {
     },
     onRefresh() {
       this.page++;
-      this.queryFriendMessage();
+      this.queryFriendMessage(true);
     },
     sendMessage(text) {
       userModel

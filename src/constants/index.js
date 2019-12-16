@@ -13,8 +13,8 @@ if (process.env.NODE_ENV === 'production') {
   // 测试环境地址
   host = 'http://test.jphd.com/ds'
   // socketUrl = 'ws://192.168.1.9:8050'
-  socketUrl = 'ws://192.168.1.6:8050'
-  // socketUrl = 'ws://172.18.13.25:8050'
+  // socketUrl = 'ws://192.168.1.6:8050'
+  socketUrl = 'ws://172.18.13.25:8050'
 }
 
 export {
