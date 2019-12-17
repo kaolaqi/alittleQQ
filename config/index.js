@@ -22,11 +22,13 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   },
   buildTest: {
-    env: { NODE_ENV: '"test"' },
-    // index: path.resolve(__dirname, '../distTest/index.html'),
-    // assetsRoot: path.resolve(__dirname, '../distTest'),
-    index: path.resolve(__dirname, '../dist/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    env: {
+      NODE_ENV: '"test"'
+    },
+    index: path.resolve(__dirname, '../distTest/index.html'),
+    assetsRoot: path.resolve(__dirname, '../distTest'),
+    // index: path.resolve(__dirname, '../dist/index.html'),
+    // assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
     productionSourceMap: true,
