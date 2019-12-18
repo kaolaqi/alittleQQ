@@ -60,7 +60,9 @@ export default {
   methods: {
     initWebSocket() {
       var self = this;
-      this.wsInstance = new WebSocket(socketUrl + "/id" + self.userId);
+      this.wsInstance = new WebSocket(
+        socketUrl + "/websocket/id" + self.userId
+      );
       this.wsInstance.onopen = () => {
         console.log(`userId为 ${self.userId} 的用户链接到websocket服务`);
       };
