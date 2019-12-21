@@ -52,8 +52,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        // target: `http://127.0.0.1:8090`, // 本地ndoe服务
-        target: `http://47.98.128.245:8090`, // 服务器node服务
+        target: `http://127.0.0.1:8090`, // 本地ndoe服务
+        // target: `http://47.98.128.245:8090`, // 服务器node服务
         changeOrigin: true
       }
     },
