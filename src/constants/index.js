@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'production') {
   // socketUrl = 'ws://192.168.1.9:8050'
   // socketUrl = 'ws://192.168.1.6:8050'
   // socketUrl = 'ws://47.98.128.245:8050'
-  socketUrl = 'ws://localhost:8050'
+  socketUrl = 'ws://localhost:8040'
 }
 
 export {
