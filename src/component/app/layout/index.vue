@@ -5,9 +5,18 @@
   </div>
 </template>
 <script>
+import initWechatSdk from '@/server/sdkServer/initWechatSdk'
 
 export default {
-  name: 'LayoutIndex'
+  name: 'LayoutIndex',
+  created() {
+    initWechatSdk({
+      pageShareTitle: 'alitterQQ —— 一个简易的聊天室',
+      pageShareURL: 'http://www.nglmq.com:8040/',
+      pageShareimgURL: 'http://nglmq.com/images/avatar.jpg',
+      pageShareDesc: '快来注册alittleQQ，邀请好友一起玩耍'
+    })
+  }
 }
 </script>
 
