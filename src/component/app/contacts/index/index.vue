@@ -16,7 +16,7 @@
         </div>
       </li>
     </ul>
-    <div v-if="friendList.length==0" class="no-list">
+    <div v-if="showEmpt && friendList.length==0" class="no-list">
       <img src="../../../../images/date_enpty.png" alt="">
       <p>暂无好友列表</p>
       <button @click="search">添加好友</button>
@@ -39,7 +39,8 @@ export default {
   },
   data() {
     return {
-      friendList: []
+      friendList: [],
+      showEmpt: false
     }
   },
   computed: {
@@ -58,6 +59,7 @@ export default {
           if (data.statusCode === 200) {
             this.friendList = data.result
           }
+          this.showEmpt = true
         })
     },
     goUserDetail(mobile) {

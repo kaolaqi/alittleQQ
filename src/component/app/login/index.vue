@@ -40,7 +40,7 @@
 // import ModalSendValidateCode from '@/component/common/sendValidateCode/index.vue';
 import { modalAlertServer } from '@/server/modals/index'
 
-var mobileReg = /^1[2|3|4|5|6|7|8|9|]\d{9}$/
+var mobileReg = /^1[2|3|4|5|6|7|8|9]\d{9}$/
 
 export default {
   name: 'Login',

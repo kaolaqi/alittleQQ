@@ -18,7 +18,7 @@
         >{{ item.userInfo.lastMessage ? item.userInfo.lastMessage.createdAt : '' }}</span>
       </li>
     </ul>
-    <div v-if="chatFriendList.length==0" class="no-list">
+    <div v-if="showEmpt && chatFriendList.length==0" class="no-list">
       <img src="../../../../images/date_enpty.png" alt="">
       <p>暂无聊天好友</p>
     </div>
@@ -39,7 +39,8 @@ export default {
   },
   data() {
     return {
-      chatFriendList: []
+      chatFriendList: [],
+      showEmpt: false
     }
   },
   computed: {
@@ -63,6 +64,7 @@ export default {
           if (data.statusCode === 200) {
             this.chatFriendList = data.result
           }
+          this.showEmpt = true
         })
     },
     toChat(item) {

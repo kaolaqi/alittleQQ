@@ -21,7 +21,7 @@ router.beforeEach((to, from, next) => {
       } else {
         store.dispatch('user/GetUserInfo', {
           mobile: hasToken
-        }).then(()=>{
+        }).then(() => {
           next() // dispatch 同步store之后再执行后续操作
         })
       }
