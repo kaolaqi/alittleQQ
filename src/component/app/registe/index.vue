@@ -22,6 +22,10 @@
         <input v-model="nickname" type="text" placeholder="请输入昵称" @blur="resize">
       </div>
       <div class="input-container">
+        <span class="label">邮箱</span>
+        <input v-model="email" type="text" placeholder="请填写邮箱" @blur="resize">
+      </div>
+      <div class="input-container">
         <span class="label">密码</span>
         <input v-model="password" type="password" placeholder="请填写密码" @blur="resize">
       </div>
@@ -53,6 +57,7 @@ import { modalMessageServer, modalAlertServer, modalLoadingServer } from '@/serv
 
 var mobileReg = /^1[2|3|4|5|6|7|8|9|]\d{9}$/
 var nicknameReg = /^[\w|\d|\u4e00-\u9fa5|]{2,8}$/
+var emailReg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
 
 export default {
   name: 'Login',
@@ -64,9 +69,9 @@ export default {
     return {
       mobile: '',
       nickname: '',
+      email: '',
       password: '',
       againPassword: '',
-
       // 是否发送图形验证码
       isSendValidateCode: false,
       // 输入信息
@@ -83,7 +88,7 @@ export default {
       return !!this.mobile
     },
     isLogin() {
-      return mobileReg.test(this.mobile) && nicknameReg.test(this.nickname) && this.password && this.password === this.againPassword
+      return mobileReg.test(this.mobile) && nicknameReg.test(this.nickname) && emailReg.test(this.email) && this.password && this.password === this.againPassword
     }
   },
   methods: {
@@ -105,6 +110,7 @@ export default {
       userModel.userResigter({
         mobile: self.mobile,
         nickname: self.nickname,
+        email: self.email,
         password: self.password
       }).then(function(data) {
         modalLoadingServer.unload()

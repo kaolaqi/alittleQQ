@@ -8,7 +8,7 @@
         @click="goUserDetail(item.userInfo.mobile)"
       >
         <div class="avatar">
-          <img :src="item.userInfo.avatar" alt />
+          <img :src="item.userInfo.avatar" alt>
         </div>
         <div class="info">
           {{ item.userInfo.nickname }}
@@ -16,18 +16,23 @@
         </div>
       </li>
     </ul>
+    <div v-if="friendList.length==0" class="no-list">
+      <img src="../../../../images/date_enpty.png" alt="">
+      <p>暂无好友列表</p>
+      <button @click="search">添加好友</button>
+    </div>
     <footer-tab />
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import { userModel } from "@/http";
-import footerTab from "@/component/common/footerTab/index.vue";
-import navHead from "@/component/common/navHead/index.vue";
+import { mapGetters } from 'vuex'
+import { userModel } from '@/http'
+import footerTab from '@/component/common/footerTab/index.vue'
+import navHead from '@/component/common/navHead/index.vue'
 
 export default {
-  name: "ContactsList",
+  name: 'ContactsList',
   components: {
     footerTab,
     navHead
@@ -35,13 +40,13 @@ export default {
   data() {
     return {
       friendList: []
-    };
+    }
   },
   computed: {
-    ...mapGetters(["avatar", "userId", "mobile"])
+    ...mapGetters(['avatar', 'userId', 'mobile'])
   },
   mounted() {
-    this.getFriendList();
+    this.getFriendList()
   },
   methods: {
     getFriendList() {
@@ -51,18 +56,18 @@ export default {
         })
         .then(data => {
           if (data.statusCode === 200) {
-            this.friendList = data.result;
+            this.friendList = data.result
           }
-        });
+        })
     },
     goUserDetail(mobile) {
-      this.$router.push({ name: "UserDetail", params: { mobile: mobile } });
+      this.$router.push({ name: 'UserDetail', params: { mobile: mobile }})
     },
     search() {
-      this.$router.push({ name: "SearchUser" });
+      this.$router.push({ name: 'SearchUser' })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

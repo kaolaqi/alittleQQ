@@ -1,43 +1,23 @@
 <template>
   <div class="user-index-page">
     <div class="banner">
-      <img :src="avatar" alt />
+      <img :src="avatar" alt>
       <span>{{ nickname }}</span>
       <i class="cicon icon-edit" @click="showEditUsername" />
     </div>
 
     <div class="item-list">
-      <router-link :to="{ name: 'wallet' }" class="link-item">
+      <a class="link-item" @click="nopageTip">
+        <!--router-link :to="{ name: 'wallet' }"  -->
         <i class="cicon icon-wallet" />
-        <span>钱包余额</span>
+        <span>朋友圈</span>
         <i class="cicon icon-personal_right row" />
-      </router-link>
-      <router-link
-        :to="{ name: 'commissionSetList', params: { searchPhone: 'null' } }"
-        class="link-item"
-      >
+      </a>
+      <a class="link-item" @click="nopageTip">
         <i class="cicon icon-commission" />
-        <span>抽成设置</span>
+        <span>我的相册</span>
         <i class="cicon icon-personal_right row" />
-      </router-link>
-      <router-link
-        :to="{ name: 'rewardStatistic', params: { searchPhone: 'null' } }"
-        class="link-item"
-      >
-        <i class="cicon icon-bounty" />
-        <span>赏金数据统计</span>
-        <i class="cicon icon-personal_right row" />
-      </router-link>
-      <router-link :to="{ name: 'taskResultAppeal' }" class="link-item">
-        <i class="cicon icon-task" />
-        <span>任务结果申诉</span>
-        <i class="cicon icon-personal_right row" />
-      </router-link>
-      <router-link :to="{ name: 'dockeCodeIndex' }" class="link-item">
-        <i class="cicon icon-exclusive" />
-        <span>我的专属对接</span>
-        <i class="cicon icon-personal_right row" />
-      </router-link>
+      </a>
     </div>
 
     <div class="logout-btn">
@@ -49,62 +29,67 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import footerTab from "@/component/common/footerTab/index.vue";
-import setUserName from "@/component/modals/setUserName/index.vue";
-import { modalAlertServer, modalConfirmServer } from "@/server/modals/index";
+import { mapGetters } from 'vuex'
+import footerTab from '@/component/common/footerTab/index.vue'
+import setUserName from '@/component/modals/setUserName/index.vue'
+import { modalAlertServer, modalConfirmServer } from '@/server/modals/index'
 
 export default {
-  name: "User",
+  name: 'User',
   components: {
     footerTab,
     setUserName
   },
-  computed: {
-    ...mapGetters(["avatar", "nickname"])
-  },
   data() {
     return {
       isVisible: false,
-      qnzUserPlatform: ""
-    };
+      qnzUserPlatform: ''
+    }
+  },
+  computed: {
+    ...mapGetters(['avatar', 'nickname'])
   },
   mounted: function() {},
   beforeDestroy() {
-    var layout = document.querySelector(".layout-outer");
+    var layout = document.querySelector('.layout-outer')
     if (layout) {
-      layout.style.background = "#fff";
+      layout.style.background = '#fff'
     }
   },
   methods: {
     logout: function() {
-      var self = this;
+      var self = this
       modalConfirmServer.use({
-        title: "提示",
-        content: "确定要退出登录吗？",
+        title: '提示',
+        content: '确定要退出登录吗？',
         confirmClick: function() {
           self.$store
-            .dispatch("user/Logout")
+            .dispatch('user/Logout')
             .then(data => {
-              console.log("登路成功");
-              self.$router.push({ name: "login" });
+              console.log('登路成功')
+              self.$router.push({ name: 'login' })
             })
             .catch(err => {
               modalAlertServer.use({
                 content: err.returnMsg
-              });
-            });
+              })
+            })
         }
-      });
+      })
     },
     showEditUsername() {
-      this.isVisible = true;
+      this.isVisible = true
     },
     closeEdit() {
-      this.isVisible = false;
+      this.isVisible = false
+    },
+    nopageTip() {
+      modalAlertServer.use({
+        content: '努力开发中，敬请期待！'
+      })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

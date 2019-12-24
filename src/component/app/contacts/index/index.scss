@@ -29,3 +29,25 @@
     }
   }
 }
+.no-list{
+  text-align: center;
+  margin-bottom: px2rem(180);
+  margin-top: px2rem(220);
+  img{
+    width: px2rem(350);
+  }
+  p{
+    font-size: px2rem(28);
+    padding-top: px2rem(20);
+    color: #999;
+  }
+  button{
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    padding: 5px 18px;
+    background-color: #4ea2f7;
+    color: #fff;
+    border-radius: 5px;
+  }
+}

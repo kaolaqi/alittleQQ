@@ -83,6 +83,7 @@ export default {
         .then(data => {
           if (data.statusCode === 200) {
             this.friendInfo = data.data;
+            console.log(this.friendInfo)
             this.queryFriendMessage();
           }
         });
@@ -119,6 +120,7 @@ export default {
         .sendFriendMessage({
           userId: this.userId,
           friendUserId: this.friendInfo.userId,
+          friendUserEmail: this.friendInfo.email,
           contentText: text
         })
         .then(data => {
