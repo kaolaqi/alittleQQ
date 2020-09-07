@@ -54,7 +54,7 @@
     "url": "https://github.com/twolfson/spritesheet-templates/issues"
   },
   "dependencies": {
-    "handlebars": "~4.0.5",
+    "handlebars": "~4.7.6",
     "handlebars-layouts": "~1.1.0",
     "json-content-demux": "~0.1.2",
     "underscore": "~1.4.2",
